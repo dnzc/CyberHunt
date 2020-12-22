@@ -1,0 +1,219 @@
+<html>
+
+<head>
+    <title>Challenge 5</title>
+    <style>
+body{
+	font-size: 20px;
+	font-family: monospace;
+	color: #333;
+}
+.question{
+    font-weight: 600;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.answers {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.answers label{
+  display: block;
+}
+#submit{
+	font-size: 20px;
+	font-family: monospace;
+	background-color: rgb(0, 120, 30);
+	color: #fff;
+	border: 0px;
+	border-radius: 3px;
+	padding: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+#submit:hover{
+	background-color: rgb(0, 100, 20);
+}
+    </style>
+</head>
+
+<body>
+    <div id="quiz"></div>
+    <button id="submit">Get Flag</button>
+    <div id="flag"></div>
+
+    <script>
+        (function () {
+            function buildQuiz() {
+                // variable to store the HTML output
+                const output = [];
+
+                // for each question...
+                myQuestions.forEach(
+                    (currentQuestion, questionNumber) => {
+
+                        // variable to store the list of possible answers
+                        const answers = [];
+
+                        // and for each available answer...
+                        for (letter in currentQuestion.answers) {
+
+                            // ...add an HTML radio button
+                            answers.push(
+                                `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${currentQuestion.answers[letter]}
+            </label>`
+                            );
+                        }
+
+                        // add this question and its answers to the output
+                        output.push(
+                            `<div class="question">${questionNumber+1}. ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join('')} </div>`
+                        );
+                    }
+                );
+
+                // finally combine our output list into one string of HTML and put it on the page
+                quizContainer.innerHTML = output.join('');
+            }
+
+            function getFlag() {
+
+                // gather answer containers from our quiz
+                const answerContainers = quizContainer.querySelectorAll('.answers');
+
+                // keep track of user's answers
+                let answerString = "";
+
+                // for each question...
+                myQuestions.forEach((currentQuestion, questionNumber) => {
+
+                    // find selected answer
+                    const answerContainer = answerContainers[questionNumber];
+                    const selector = `input[name=question${questionNumber}]:checked`;
+                    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+                    // append answer to answer string
+                    if (userAnswer == undefined) {
+                        answerString = answerString.concat("x");
+                    } else {
+                        answerString = answerString.concat(userAnswer);
+                    }
+
+                });
+
+                // generate flag from user's answers
+                flagContainer.innerHTML = "flag{challenge6-" + sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(answerString)).slice(0,25) + "}";
+            }
+
+            const quizContainer = document.getElementById('quiz');
+            const flagContainer = document.getElementById('flag');
+            const submitButton = document.getElementById('submit');
+            const myQuestions = [
+                {
+                    question: "Which of these is a JavaScript package manager?",
+                    answers: {
+                        a: "Node.js",
+                        b: "TypeScript",
+                        c: "npm",
+                        d: "ESLint"
+                    }
+                },
+                {
+                    question: "Ghostery blocks which of the following:",
+                    answers: {
+                        a: "HTML",
+                        b: "javascript",
+                        c: "CSS",
+                        d: "websites"
+                    }
+                },
+                {
+                    question: "Who invented Linux?",
+                    answers: {
+                        a: "Daniel Linux",
+                        b: "Bill Gates",
+                        c: "Linus Torvalds",
+                        d: "Dennis Ritchie"
+                    }
+                },
+                {
+                    question: "To find reports on santa from official US government websites, which of the following google searches would apply?",
+                    answers: {
+                        a: "site:gov ext:pdf santa",
+                        b: "santa site:gov filetype:pdf",
+                        c: "\"santa\" ext:pdf site:gov",
+                        d: "All of the above"
+                    }
+                },
+                {
+                    question: "What does the following mathematical symbol mean? Ɐ",
+                    answers: {
+                        a: "exclusive or",
+                        b: "there exists",
+                        c: "a single",
+                        d: "for all"
+                    }
+                },
+                {
+                    question: "The keyword geocode will:",
+                    answers: {
+                        a: "Search specific locations on Instagram",
+                        b: "Search specific locations on Twitter",
+                        c: "Search specific locations on Reddit",
+                        d: "Encode information about rocks into base64"
+                    }
+                },
+                {
+                    question: "Which of the following volatility commands will show parent-child relationships for running processes?",
+                    answers: {
+                        a: "vol.py -f mem.img pstree",
+                        b: "vol.py -f mem.img psscan",
+                        c: "vol.py -f mem.img printkey -o 0x95d3f008 -K",
+                        d: "vol.py -f mem.img dllist --pid 1872"
+                    }
+                },
+                {
+                    question: "The output from one of these programs can be fed into mimikatz on an attacker's machine to extract hashes. Which one?",
+                    answers: {
+                        a: "Procdump",
+                        b: "ntdsutil",
+                        c: "PTunnel",
+                        d: "secretsdump.py"
+                    }
+                },
+                {
+                    question: "Which of the following UNIX files contains info about past user logins?",
+                    answers: {
+                        a: "wtmp",
+                        b: "utmp",
+                        c: "btmp",
+                        d: "lastlog"
+                    }
+                },
+                {
+                    question: "Which of the following commands launch a SYN stealth scan with OS detection?",
+                    answers: {
+                        a: "nmap -sV -p 22 198.116.0-255.1-127",
+                        b: "nmap -v -iR 1000 -Pn -p 22",
+                        c: "nmap -sS -O scanme.please.org/24",
+                        d: "nmap -Pn -p80 -oX a.xml -oG b.gnmap 216.163.128.20/20"
+                    }
+                }
+            ];
+
+            // Kick things off
+            buildQuiz();
+
+            // Event listeners
+            submitButton.addEventListener('click', getFlag);
+        })();
+    </script>
+    
+    <script src="https://bitwiseshiftleft.github.io/sjcl/sjcl.js"></script>
+    
+</body>
+
+</html>
