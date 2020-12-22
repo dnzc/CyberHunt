@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cyber Hunt</title>
+    <link href="main.css" rel="stylesheet">
+
+    <style>
+    .tall-row {
+        margin-top: 40px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Cyber Treasure Hunt</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PLAY THE HUNT<span class="caret"></span> </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="challenges.html">Challenges</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Help</li>
+                            <li><a href="tips.html">Tips</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1>Christmas Cyber Treasure Hunt</h1>
+            <p>Some fun cyber puzzles (similar to those in <a href="https://ctftime.org/ctf-wtf/" target="_blank"> >>jeopardy-style CTFs<<</a>)</p>
+            <div style="font-family: monospace; white-space: pre; color: grey;">
+         |
+        -+-
+         A
+        /=\               /\  /\    ___  _ __  _ __ __    __
+      i/ O \i            /  \/  \  / _ \| '__|| '__|\ \  / /
+      /=====\           / /\  /\ \|  __/| |   | |    \ \/ /
+      /  i  \           \ \ \/ / / \___/|_|   |_|     \  /
+    i/ O * O \i                                       / /
+    /=========\        __  __                        /_/    _
+    /  *   *  \        \ \/ /        /\  /\    __ _  ____  | |
+  i/ O   i   O \i       \  /   __   /  \/  \  / _` |/ ___\ |_|
+  /=============\       /  \  |__| / /\  /\ \| (_| |\___ \  _
+  /  O   i   O  \      /_/\_\      \ \ \/ / / \__,_|\____/ |_|
+i/ *   O   O   * \i
+/=================\
+       |___|
+
+            </div>           
+            <p>
+                <a class="btn btn-lg btn-primary" href="challenges.html" role="button">Get Started »</a>
+            </p>
+        </div>
+
+        <div class="row tall-row">
+            <div class="col-lg-12">
+                <h1>How do the challenges work?</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Challenge Answers</h2>
+                <p class="text-info">The solution to each challenge is a link to the next challenge, contained in a string called a flag. The flag always starts with the string <strong style="color: lightgreen;">flag{</strong> and ends with <strong style="color: lightgreen">}</strong> i.e. it is wrapped in flag{}.</p>
+                <h4 class="text-primary"><strong>The url of the next challenge is always in the format https://dnzc.github.io/Cyber-Hunt/challenges/<span class="text-warning">{{FLAG}}</span>/challenge.html</strong></h4>
+                <p>For example, if the solution to a challenge was:</p>
+                <div class="well well-sm text-warning">
+                   <strong>flag{hello_world-1337}</strong> 
+                </div>
+                <p>Then the url of the next challenge would be:</p>
+                <div class="well well-sm text-warning">
+                   <strong>https://dnzc.github.io/Cyber-Hunt/challenges/hello_world-1337/challenge.html</strong> 
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Challenge Briefings</h2>
+                <p>Each challenge comes with a briefing that outlines the goal for that challenge, as well as any challenge files. The briefings page can be accessed <a href="challenges.html"> >>here<< </a> , go there to get started - no login / signup is required, just start solving :)</p>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Other Information</h2>
+
+                <div class="well well-lg text-danger">
+                   <strong>
+                        Please don't use any automated scanning tools such as sqlmap / dirbuster - these are not needed at all.
+                        <br><br>
+                        If you visit a page and it returns a 404 error, then that page really doesn't exist, don't bother trying to uncover anything.
+                    </strong> 
+                    <!-- Here's your reward for reading the above rules: flag{challenge1-vptjkAdLZCbrGKwsfbgGErZxd} -->
+                </div>
+
+                <p>The challenges are sequential and are designed to generally increase in difficulty. There are many miscellaneous topics covered that require a good general knowledge about computers and a lot of creativity. Good luck!</p>
+                <p class="text-info">If enough people are interested, I am happy to provide personal help.</p>
+            </div>
+        </div>
+
+        <div class="row tall-row">
+            <div class="col-lg-12">
+                <h1>I'm stuck. How can I get help?</h1>
+                <hr>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="alert alert-info">
+                    <strong>Keep trying!</strong> These challenges are not meant to be trivial, and if you persist, the eureka moment will come, I promise.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>There is a <a href="tips.html" class="alert-link"> >>tips page<< </a> for hints and relevant concepts.</p>
+                <p class="text-info"><em>Remember, google is your best friend!</em></p>
+                <p>As a wise man once said: <a href="https://www.youtube.com/watch?v=t-bgRQfeW64" target="_blank" class="text-warning">youtube.com/watch?v=t-bgRQfeW64</a></p>
+            </div>
+        </div>
+
+        <div class="row tall-row">
+            <div class="col-md-12">
+                <hr>
+                <p><small>Created by <a href="https://github.com/dnzc/" target="_blank">dnzc</a> | <a href="https://github.com/Bachittarjeet" target="_blank">Bootstrap Template</a></small></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

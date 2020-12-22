@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cyber Hunt</title>
+    <link href="main.css" rel="stylesheet">
+
+    <style>
+    .tall-row {
+        margin-top: 40px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Cyber Treasure Hunt</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PLAY THE HUNT<span class="caret"></span> </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="challenges.html">Challenges</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Help</li>
+                            <li><a href="tips.html">Tips</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+
+        <div class="row tall-row">
+            <div class="col-lg-12">
+                <h1>Tips</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-info">Here are some explanations of concepts that relate to challenges if you'd like some help.</p>
+                <hr>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a aria-expanded="true" href="#general" data-toggle="tab">General</a></li>
+                    <li class=""><a aria-expanded="false" href="#steg" data-toggle="tab">Steganography</a></li>
+                    <li class=""><a aria-expanded="false" href="#webexp" data-toggle="tab">Web exploitation</a></li>
+                    <li class="dropdown">
+                        <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown">Crypto <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#cryptoclassic" data-toggle="tab">Classic</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#cryptomodern" data-toggle="tab">Modern</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="general">
+                        <br>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p>Many challenges require logical skills, for example reversing some python or finding vulnerabilities in source code.</p>
+                                <p>Googling skills are a must for misc challenges.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="steg">
+                        <br>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h3>General tips</h3>
+                                <p>Steganography is the practice of hiding secret data inside non-secret media that the recipient can then uncover.</p>
+                                <p>For images, to start, finding plaintext strings in the image (e.g. by running the strings command or opening in notepad) is basic practice.</p>
+                                <hr>
+                                <h3>Images</h3>
+                                <p>Steghide, lsb, appending</p>
+                                <hr>
+                                <h3>Audio</h3>
+                                <p>audacity / sonic visualizer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="webexp">
+                        <br>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h3>General tips</h3>
+                                <p>Always check things like the source code and cookies, network tab etc.</p>
+                                <p>Unfortunately since I'm using github pages I'm forced to only use static pages so I can't host PHP exploit challenges (which are my favourite type of web challenges) or any port services :(</p>
+                                <hr>
+                                <h3>PHP</h3>
+                                <p>A language used for web development that can be embedded into HTML. Has many vulnerabilities if you're not careful, including type juggling and insecure mt_rand which are fun (and surprisingly easy) to try and exploit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="cryptoclassic">
+                        <br>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p>Caesar ciphers innit</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="cryptomodern">
+                        <br>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h3>Cyberchef</h3>
+                                <p><a href="https://gchq.github.io/CyberChef" target="_blank"> >>Cyberchef<< </a> is a great tool for many of the techniques mentioned in this tips page. You can load "recipes", aka operations, to perform on the input.</p>
+                                <hr>
+                                <h3>Base64</h3>
+                                <p>Base64 is an encoding scheme that you can find more information about by googling. It is useful for transferring data as the encoded message only consists of common characters, so non-printable bytes can be preserved.</p>
+                                <p>As soon as you see a sequence of a mixture of alphanumeric characters followed by up to two equals signs (used for padding to make the message length a multiple of 3) your brain should instantly think base64 or similar, for example base32 or base85. You can play around in cyberchef to get a feel for what these messages look like.</p>
+                                <hr>
+                                <h3>Hashing</h3>
+                                <p>How are passwords stored in databases? Answer: they are hashed, otherwise if an outsider got hold of the database they would know everyone's passwords.</p>
+                                <p>Think of hashing as a one way function that you can pass any input to and that gives a unique output, but the input cannot be determined from the output - so obviously this is ideal for storing passwords.</p>
+                                <p>However implementing password hashing / storage by yourself is a horrible idea since you will almost certainly get it wrong somehow (sorry!) and your passwords will inevitably end up being leaked to the internet in a horror story that you never thought was possible.</p>
+                                <p>If we can pass any input to a hashing function and it gives a unique output, why don't we just try hashing loads of plaintext values until we get a hash that matches, then we would have found the plaintext? People do this (the process is called hash cracking) and the hashes of many common plaintext values e.g. "password123" are readily available in things called rainbow tables. A good site for this is <a href="https://crackstation.net/" target="_blank">>>crackstation<<</a>, although often just googling the hash works as well.</p>
+                                <p>Obviously rainbow tables are less of a problem the more secure/long plaintext we have. However rainbow tables can be protected against easily by <a href="https://auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/" target="_blank">>>salting<<</a> your input.</p>
+                                <p>Here is an insecure example hash for you to practice decrypting:</p>
+                                <div class="well well-sm">
+                                    <p class="text-warning">5d41402abc4b2a76b9719d911017c592</p>
+                                </div>
+                                <hr>
+                                <h3>RSA</h3>
+                                <p>rsa cool</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row tall-row">
+            <div class="col-md-12">
+                <hr>
+                <p><small>Created by <a href="https://github.com/dnzc/" target="_blank">dnzc</a> | <a href="https://github.com/Bachittarjeet" target="_blank">Bootstrap Template</a></small></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>
