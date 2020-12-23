@@ -12,6 +12,9 @@
         </div>
 
         <script>
+            function hash(str) {
+                return sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(str));
+            }
             function rot13(str) {
                 var input     = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
                 var output    = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
@@ -24,15 +27,15 @@
                 var submittedPassword = document.getElementById("password").value;
                 document.getElementById("username").value = "";
                 document.getElementById("password").value = "";
-                if (md5(submittedUsername) == "21232f297a57a5a743894a0e4a801fc3" && md5(submittedPassword) == "482c811da5d5b4bc6d497ffa98491e38") {
-                    alert("Login successful. Flag: flag{challenge4-" + md5(rot13(window.btoa(rot13(submittedUsername+submittedPassword)))).slice(0,25) + "}");
+                if (hash(submittedUsername) == "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918" && hash(submittedPassword) == "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f") {
+                    alert("Login successful. Flag: flag{challenge4-" + hash(rot13(window.btoa(rot13(submittedUsername+submittedPassword)))).slice(0,25) + "}");
                 } else {
                     alert("Login failed.");
                 }
             }
         </script>
 
-        <script src="http://www.myersdaily.org/joseph/javascript/md5.js"></script>
+        <script src="https://bitwiseshiftleft.github.io/sjcl/sjcl.js"></script>
 
     </body>
 </html>
