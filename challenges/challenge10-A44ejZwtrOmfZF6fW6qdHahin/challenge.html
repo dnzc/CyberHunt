@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>Challenge 10</title>
+</head>
+<style>
+    body {
+        font-family: monospace;
+    }
+
+    .ans {
+        border: 5px solid black;
+        border-radius: 10px;
+        margin: 20px;
+        padding-bottom: 10px;
+        width: 400px;
+    }
+
+    .input {
+        margin-left: 60px;
+    }
+
+    h1 {
+        margin-left: 20px;
+    }
+
+    button {
+        font-size: 20px;
+        font-family: monospace;
+        background-color: rgb(0, 120, 30);
+        color: #fff;
+        border: 0px;
+        border-radius: 3px;
+        padding: 20px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+    #flag {
+        margin-left: 20px;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+
+    <div id="croatia-easy" class="ans">
+        <h1>croatia-easy.jpg</h1>
+        <p class="input">Latitude: <input type="number" id="lat1" value="0" step=".001"></p>
+        <p class="input">Longitude: <input type="number" id="long1" value="0" step=".001"></p>
+    </div>
+
+    <div id="street-medium" class="ans">
+        <h1>street-medium.png</h1>
+        <p class="input">Latitude: <input type="number" id="lat2" value="0" step=".001"></p>
+        <p class="input">Longitude: <input type="number" id="long2" value="0" step=".001"></p>
+    </div>
+
+    <div id="cemetery-hard" class="ans">
+        <h1>cemetery-hard.jpg</h1>
+        <p class="input">Latitude: <input type="number" id="lat3" value="0" step=".001"></p>
+        <p class="input">Longitude: <input type="number" id="long3" value="0" step=".001"></p>
+    </div>
+
+    <button onclick="getFlag()">Get Flag</button>
+
+    <div id="flag"></div>
+
+    <script>
+        function getFlag() {
+            var lat1 = document.getElementById("lat1").value;
+            var long1 = document.getElementById("long1").value;
+            var lat2 = document.getElementById("lat2").value;
+            var long2 = document.getElementById("long2").value;
+            var lat3 = document.getElementById("lat3").value;
+            var long3 = document.getElementById("long3").value;
+            var toHash = lat1 + long1 + lat2 + long2 + lat3 + long3;
+            var salt = "bmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA=";
+            document.getElementById("flag").innerHTML = "flag{challenge11-" + sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(salt+toHash)).slice(0,25) + "}";
+        }
+    </script>
+
+    <script src="https://bitwiseshiftleft.github.io/sjcl/sjcl.js"></script>
+
+</body>
+
+</html>

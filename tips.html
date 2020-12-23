@@ -69,7 +69,8 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <p>Many challenges require logical skills, for example reversing some python or finding vulnerabilities in source code.</p>
-                                <p>Googling skills are a must for misc challenges.</p>
+                                <p>Googling skills are a must.</p>
+                                <p>tineye and google images are good tools for reverse image searching.</p>
                             </div>
                         </div>
                     </div>
@@ -82,7 +83,8 @@
                                 <p>For images, to start, finding plaintext strings in the image (e.g. by running the strings command or opening in notepad) is basic practice.</p>
                                 <hr>
                                 <h3>Images</h3>
-                                <p>Steghide, lsb, appending</p>
+                                <p> <a href="https://www.boiteaklou.fr/Steganography-Least-Significant-Bit.html">>>LSB<<</a> - The idea behind this method of steganography is you hide data in the least significant bit of each pixel. James Stanley has a <a href="https://incoherency.co.uk/image-steganography/">>>great tool<<</a> for it.</p>
+                                <p> Appending - a great way to hide data in images is simply to append it to the end of the image file in a zip. Opening the image in the normal way doesn't reveal anything, but a file archiver like 7zip will treat it like an archive and open inside the zip file.</p>
                                 <hr>
                                 <h3>Audio</h3>
                                 <p>audacity / sonic visualizer</p>
@@ -106,6 +108,10 @@
                         <br>
                         <div class="panel panel-default">
                             <div class="panel-body">
+                                <h3>General tips</h3>
+                                <p>To start, checking letter frequencies is always a good idea (assuming your plaintext is in english) since this can give you an idea as to what sort of cipher it is.</p>
+                                <p><a href="https://guballa.de/">>>This site<<</a> is a great one for cracking both substitution and vigenere ciphers.</p>
+                                <hr>
                                 <h3>Substitution</h3>
                                 <p>Caesar ciphers innit</p>
                                 <hr>
@@ -113,7 +119,8 @@
                                 <p>Letter frequencies stay the same</p>
                                 <hr>
                                 <h3>Vigenere</h3>
-                                <p>vigenere cool</p>
+                                <p>Read about how vigenere works <a href="https://www.google.com/search?q=vigenere+cipher" target="_blank">>>here<<</a>. Letter frequencies are changed, so if you perform frequency analysis and it matches that expected of normal english then it likely isn't vigenere.</p>
+                                <p>Because of the way vigenere works, if you know some of the plaintext then it is easy to decrypt the rest of the message (see <a href="https://crypto.stackexchange.com/questions/12195/find-the-key-to-a-vigen%C3%A8re-cipher-given-known-ciphertext-and-plaintext" target="_blank">>>here<<</a>).</p>
                             </div>
                         </div>
                     </div>
