@@ -68,6 +68,7 @@
                         <br>
                         <div class="panel panel-default">
                             <div class="panel-body">
+                                <p>I wouldnt be mentioning anything if it didn't appear in the challenges at some point! Everything here is therefore useful.</p>
                                 <p>Many challenges require logical skills, for example reversing some python or finding vulnerabilities in source code.</p>
                                 <p>Googling skills are a must.</p>
                                 <p>tineye and google images are good tools for reverse image searching.</p>
@@ -85,6 +86,7 @@
                                 <h3>Images</h3>
                                 <p> <a href="https://www.boiteaklou.fr/Steganography-Least-Significant-Bit.html">>>LSB<<</a> - The idea behind this method of steganography is you hide data in the least significant bit of each pixel. James Stanley has a <a href="https://incoherency.co.uk/image-steganography/">>>great tool<<</a> for it.</p>
                                 <p> Appending - a great way to hide data in images is simply to append it to the end of the image file in a zip. Opening the image in the normal way doesn't reveal anything, but a file archiver like 7zip will treat it like an archive and open inside the zip file.</p>
+                                <p>Steghide - a program that hides data for you with its own method so can usually bypass some forms of detection - there is a good web version of it <a href="https://futureboy.us/stegano/decinput.html" target="_blank">>>here<<</a></p>
                                 <hr>
                                 <h3>Audio</h3>
                                 <p>If you hear high pitched random noises, checking the spectogram might be a good idea. Sonic visualizer is a great tool for this.</p>
@@ -110,13 +112,15 @@
                             <div class="panel-body">
                                 <h3>General tips</h3>
                                 <p>To start, checking letter frequencies is always a good idea (assuming your plaintext is in english) since this can give you an idea as to what sort of cipher it is.</p>
-                                <p><a href="https://guballa.de/">>>This site<<</a> is a great one for cracking both substitution and vigenere ciphers.</p>
+                                <p><a href="https://guballa.de/" target="_blank">>>This site<<</a> is a great one for cracking both substitution and vigenere ciphers.</p>
+                                <p><a href="https://tholman.com/other/transposition/" target="_blank">>>This site<<</a> is a great one for visualising columnar transposition ciphers.</p>
+                                <p>And <a href="http://quipqiup.com/" target="_blank">>>This site<<</a> is just a great one.</p>
                                 <hr>
                                 <h3>Substitution</h3>
-                                <p>Caesar ciphers innit</p>
+                                <p>Simple cipher, an example of a specific kind is the caesar cipher. Essentially the idea behind this cipher is running find and replace 26 times.</p>
                                 <hr>
                                 <h3>Transposition</h3>
-                                <p>Letter frequencies stay the same</p>
+                                <p>Letter frequencies stay the same, so if it matches that expected of english it's probably some form of transposition.</p>
                                 <hr>
                                 <h3>Vigenere</h3>
                                 <p>Read about how vigenere works <a href="https://www.google.com/search?q=vigenere+cipher" target="_blank">>>here<<</a>. Letter frequencies are changed, so if you perform frequency analysis and it matches that expected of normal english then it likely isn't vigenere.</p>
@@ -151,6 +155,7 @@
                                 <p>Has many potential weaknesses for example if n is too small then it can easily be factorized with something like <a href="https://www.alpertron.com.ar/ECM.HTM" target="_blank">>>this<<</a> .</p>
                                 <p>A good step by step walkthrough is <a href="https://www.cryptool.org/en/cto/highlights/rsa-step-by-step" target="_blank">>>here<<</a> .</p>
                                 <p>RSA is easily implemented in python or any programming language for example <a href="https://crypto.stackexchange.com/questions/19444/rsa-given-q-p-and-e" target="_blank">>>here<<</a> .</p>
+                                <p>There are many other cryptosystems such as AES which cyberchef has a good recipe for.</p>
                             </div>
                         </div>
                     </div>

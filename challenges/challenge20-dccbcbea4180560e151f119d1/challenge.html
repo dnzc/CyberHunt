@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>Challenge 20</title>
+    <style>
+        body {
+            font-family: monospace;
+        }
+
+        .ans {
+            border: 5px solid black;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            padding-top: 0px;
+            width: 650px;
+        }
+
+        #token {
+            width: 600px;
+        }
+
+        button {
+            font-size: 20px;
+            font-family: monospace;
+            background-color: rgb(0, 120, 30);
+            color: #fff;
+            border: 0px;
+            border-radius: 3px;
+            padding: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+
+        #flag {
+            margin-left: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body style="font-family: monospace;">
+    <p style="font-size: 20px; margin-left: 20px;">Here's the admin's session token.</p>
+    <p style="font-size: 20px; margin-left: 20px;">YWE1ZGQxNzgwNTRkZjNkMDUyNmY5YTZjODBiM2UwYzdkZGRjMWFlZDEzMjYzMjk3MDcuNjg4MDQ0MzU0Y2YxZTJhYWY2ZTZjMzQyNGE3YWUxOWYwYjg5NzE0NTJiN2Q0MzhiMg==</p>
+
+    <div class="ans">
+        <h1>What is the admin's password reset token? </h1>
+        <input type="text" id="token">
+    </div>
+
+    <button onclick="getFlag()">Get Flag</button>
+
+    <div id="flag"></div>
+
+    <script>
+        function getFlag() {
+            var value = document.getElementById("token").value;
+            var salt = "*sigh*icantthinkofagoodsalt";
+            document.getElementById("flag").innerHTML = "flag{challenge21-" + sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(salt + value)).slice(0, 25) + "}";
+        }
+    </script>
+
+    <script src="https://bitwiseshiftleft.github.io/sjcl/sjcl.js"></script>
+</body>
+
+</html>

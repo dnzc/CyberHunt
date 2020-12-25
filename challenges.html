@@ -117,7 +117,7 @@
                             <div class="panel-heading"><h3 class="panel-title">Challenge 6</h3></div>
                             <div class="panel-body">
                                 <p>There are n stones in a heap. Alice and Bob play a game by alternatively taking either 1 stone from the heap or a prime number of stones which divides the current number of stones in the heap. The player who takes the last stone wins, and Alice goes first. Then for all multiples of k, Bob can win no matter how Alice plays.</p>
-                                <p>The zip on the webpage contains your flag; its password is the md5 hash of k. (Bonus: can you prove this by induction?)</p>
+                                <p>The zip on the webpage contains your flag; its password is the (lowercase) md5 hash of k. (Bonus: can you prove this by induction?)</p>
                             </div>
                         </div>
                     </div>
@@ -180,6 +180,101 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="13">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h3 class="panel-title">Challenge 13</h3></div>
+                            <div class="panel-body">
+                                <p>Yesterday I ran this python file I downloaded. Unfortunately it was hijacked by some ransomware, and all my files were encrypted. The ransomware said that in order to decrypt them I needed the value of e that was generated when I ran the python file. Here's the python file and what it output when I ran it - find the value of e that it generated when I ran it.</p>
+                                <p>There is a zip on the webpage containing the flag; its password is the value of e.</p>
+                                <div class="well well-sm">
+                                    <a href="res/challenge13/challenge.py" target="_blank"> >>challenge.py<< </a>
+                                </div>
+                                <div class="well well-sm">
+                                    <a href="res/challenge13/output.txt" target="_blank"> >>output.txt<< </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="14">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h3 class="panel-title">Challenge 14</h3></div>
+                            <div class="panel-body">
+                                <p>On the webpage is a network capture of when I was browsing the web. Extract the flag. (hint: http objects)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="15">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h3 class="panel-title">Challenge 15</h3></div>
+                            <div class="panel-body">
+                                <p>There are 10 ants on a 5000km long string. Each ant is given a random direction (left or right) and then they begin to crawl along the string. They all move at 1 cm/min . When two ants collide, they both "bounce off each other" and move in the opposite direction as before the collision (at the same speed). The only way an ant can fall off the string is when it crawls off either end.</p>
+                                <p>(each ant is infinitely small)</p>
+                                <p>Your puzzle input consists of the locations of the ants - the nth line of the input is an integer representing the starting distance between the nth ant and the left end of the string in metres. Find both the minimum possible time for the first ant to fall off the string and the maximum possible time taken for all of the ants to fall off the string. (both in seconds) This will be an integer.</p>
+                                <p>Your puzzle input is on the webpage. To proceed, follow the instructions on the page.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="16">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h3 class="panel-title">Challenge 16</h3></div>
+                            <div class="panel-body">
+                                <p>Up for some more steg? Find the flag...</p>
+                                <p>Hint: that image is on the school site, spot the difference.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="17">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h3 class="panel-title">Challenge 17</h3></div>
+                            <div class="panel-body">
+                                <p>Let x be a real number. Suppose that if ABCD is any convex cyclic quadrilateral such that AC=4, BD=5 and AB is perpendicular to CD, then the area of ABCD is at least x. Then the greatest possible value of x is m/n, where m and n are positive integers with gcd(m,n)=1. The password for the zip is the md5 (lowercase) of 100*m+n.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="18">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h3 class="panel-title">Challenge 18</h3></div>
+                            <div class="panel-body">
+                                <p>Here's an RSA encryption program, see if you can spot the vulnerability and break the encryption. The output of the program is on the webpage.</p>
+                                <div class="well well-sm">
+                                    <a href="res/challenge18/encrypt.py" target="_blank"> >>encrypt.py<< </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="19">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h3 class="panel-title">Challenge 19</h3></div>
+                            <div class="panel-body">
+                                <p>Someone called Aeschylus Crypt has a twitter profile - find your flag.</p>
+                                <p>Note: the webpage is irrelevant for this challenge apart from the final flag generation which you obtain instructions for from solving the OSINT challenge.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="20">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h3 class="panel-title">Challenge 20</h3></div>
+                            <div class="panel-body">
+                                <p>This is the best challenge yet, I promise.</p>
+                                <p>A known hacker has a banking website up and running where he sells IKEA djungelskogs, but I think there might be more to it.</p>
+                                <p>The hacker's site has a password reset page that functions by generating a session token and a password reset token. The password reset token is then used to authorize a password reset while the session token is displayed to the user.</p>
+                                <p>I only managed to intercept a few lines of the source code, although I did also intercept one of the admin's session tokens. With this information, can you figure out the admin's password reset token? That would allow us to reset the admin's password and gain access to their account.</p>
+                                <p>The few lines of source code I managed to intercept are attached below; and the admin's session token is on the webpage. Figure out the admin's password reset token for me.</p>
+                                <p>To get your flag, input the password reset token into the webpage and press "Get Flag". The flag it generates is based on your input, so you have to get the answer right to get the correct flag!</p>
+                                <div class="well well-sm">
+                                    <a href="res/challenge20/intercept.php" target="_blank"> >>intercept.php<< </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="21">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h3 class="panel-title">Conclusion</h3></div>
+                            <div class="panel-body">
+                                <p>Follow the instructions on the webpage.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -188,14 +283,14 @@
                     <a href="#11" class="list-group-item" data-toggle="tab"><span class="badge">CRYPTO</span>Challenge 11</a>
                     <a href="#12" class="list-group-item" data-toggle="tab"><span class="badge">STEG</span>Challenge 12</a>
                     <a href="#13" class="list-group-item" data-toggle="tab"><span class="badge">REV</span>Challenge 13</a>
-                    <a href="#14" class="list-group-item" data-toggle="tab"><span class="badge">WEB</span>Challenge 14</a>
+                    <a href="#14" class="list-group-item" data-toggle="tab"><span class="badge">MISC</span>Challenge 14</a>
                     <a href="#15" class="list-group-item" data-toggle="tab"><span class="badge">MISC</span>Challenge 15</a>
                     <a href="#16" class="list-group-item" data-toggle="tab"><span class="badge">STEG</span>Challenge 16</a>
                     <a href="#17" class="list-group-item" data-toggle="tab"><span class="badge">MISC</span>Challenge 17</a>
                     <a href="#18" class="list-group-item" data-toggle="tab"><span class="badge">CRYPTO</span>Challenge 18</a>
                     <a href="#19" class="list-group-item" data-toggle="tab"><span class="badge">OSINT</span>Challenge 19</a>
                     <a href="#20" class="list-group-item" data-toggle="tab"><span class="badge">REV</span>Challenge 20</a>
-                    <a href="#21" class="list-group-item" data-toggle="tab"><span class="badge">MISC</span>FINAL CHALLENGE</a>
+                    <a href="#21" class="list-group-item" data-toggle="tab"><span class="badge">MISC</span>Conclusion</a>
                 </div>
             </div>
         </div>
